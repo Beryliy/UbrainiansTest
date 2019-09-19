@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    //global
+    <!--Global-->
     <dimen name="scalable_width">0dp</dimen>
     <dimen name="scalable_height">0dp</dimen>
 
+    <!--MainActivity-->
     <dimen name="tabs_height">50dp</dimen>
+
+    <!--ExtractFragment-->
+    <dimen name="input_height">30dp</dimen>
+    <dimen name="input_margin_top">10dp</dimen>
+    <dimen name="input_margin_start">20dp</dimen>
+    <dimen name="input_margin_end">20dp</dimen>
+    <dimen name="img_table_margin_top">10dp</dimen>
 </resources>

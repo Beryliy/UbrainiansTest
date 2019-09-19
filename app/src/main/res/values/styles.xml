@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--//MainActivity//-->
     <style name="NavigationFragment">
         <item name="android:layout_width">@dimen/scalable_width</item>
         <item name="android:layout_height">@dimen/scalable_height</item>
@@ -16,6 +17,19 @@
     <style name="Tabs">
         <item name="android:layout_width">@dimen/scalable_width</item>
         <item name="android:layout_height">@dimen/tabs_height</item>
+    </style>
+
+    <!--//ExtractFragment//-->
+    <style name="InputField">
+        <item name="android:layout_width">@dimen/scalable_width</item>
+        <item name="android:layout_height">@dimen/input_height</item>
+        <item name="android:layout_marginStart">@dimen/input_margin_start</item>
+        <item name="android:layout_marginEnd">@dimen/input_margin_end</item>
+    </style>
+
+    <style name="ImageTable">
+        <item name="android:layout_width">@dimen/scalable_width</item>
+        <item name="android:layout_height">@dimen/scalable_height</item>
     </style>
 
 </resources>
