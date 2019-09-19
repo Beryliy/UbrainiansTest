@@ -1,6 +1,7 @@
 package com.flogiston.test.di
 
 import com.flogiston.test.BuildConfig
+import com.flogiston.test.network.DownloadZipService
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -19,4 +20,5 @@ val appModule = module {
             .client(get())
             .build()
     }
+    single <DownloadZipService> { get<Retrofit>().create(DownloadZipService::class.java) }
 }
