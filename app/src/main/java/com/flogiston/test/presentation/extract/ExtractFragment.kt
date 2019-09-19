@@ -23,5 +23,7 @@ class ExtractFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_extract, container, false)
     }
 
-
+    companion object {
+        const val SHOW_PROGRESS = "show_progress"
+    }
 }
