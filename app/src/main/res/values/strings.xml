@@ -3,4 +3,7 @@
     <string name="find_address">find address</string>
     <string name="panorama">panorama</string>
     <string name="extract_archive">extract archive</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

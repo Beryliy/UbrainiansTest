@@ -1,7 +1,8 @@
-package com.flogiston.test
+package com.flogiston.test.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.flogiston.test.R
 
 class MainActivity : AppCompatActivity() {
 
