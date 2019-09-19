@@ -8,9 +8,15 @@
     <dimen name="tabs_height">50dp</dimen>
 
     <!--ExtractFragment-->
-    <dimen name="input_height">30dp</dimen>
+    <dimen name="input_height">40dp</dimen>
     <dimen name="input_margin_top">10dp</dimen>
     <dimen name="input_margin_start">20dp</dimen>
-    <dimen name="input_margin_end">20dp</dimen>
+    <dimen name="input_margin_end">10dp</dimen>
+
     <dimen name="img_table_margin_top">10dp</dimen>
+
+    <dimen name="find_btn_width">40dp</dimen>
+    <dimen name="find_btn_height">40dp</dimen>
+    <dimen name="find_btn_margin_top">10dp</dimen>
+    <dimen name="find_btn_margin_end">20dp</dimen>
 </resources>

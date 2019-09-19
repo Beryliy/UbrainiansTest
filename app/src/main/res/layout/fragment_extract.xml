@@ -12,8 +12,17 @@
         android:layout_marginTop="@dimen/input_margin_top"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toStartOf="@id/findB">
     </EditText>
+
+    <Button
+        style="@style/FindButton"
+        android:id="@+id/findB"
+        android:background="@drawable/btn_find"
+        android:layout_marginTop="@dimen/find_btn_margin_top"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </Button>
     
     <androidx.recyclerview.widget.RecyclerView
         style="@style/ImageTable"

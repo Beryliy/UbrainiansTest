@@ -27,6 +27,13 @@
         <item name="android:layout_marginEnd">@dimen/input_margin_end</item>
     </style>
 
+    <style name="FindButton">
+        <item name="android:layout_width">@dimen/find_btn_width</item>
+        <item name="android:layout_height">@dimen/find_btn_height</item>
+        <item name="android:layout_marginTop">@dimen/find_btn_margin_top</item>
+        <item name="android:layout_marginEnd">@dimen/find_btn_margin_end</item>
+    </style>
+
     <style name="ImageTable">
         <item name="android:layout_width">@dimen/scalable_width</item>
         <item name="android:layout_height">@dimen/scalable_height</item>
