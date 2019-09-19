@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="NavigationFragment">
+        <item name="android:layout_width">@dimen/scalable_width</item>
+        <item name="android:layout_height">@dimen/scalable_height</item>
+    </style>
+
+    <style name="Tabs">
+        <item name="android:layout_width">@dimen/scalable_width</item>
+        <item name="android:layout_height">@dimen/tabs_height</item>
+    </style>
+
 </resources>
