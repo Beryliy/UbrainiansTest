@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">UbrainiansTest</string>
+    <string name="find_address">find address</string>
+    <string name="panorama">panorama</string>
+    <string name="extract_archive">extract archive</string>
 </resources>

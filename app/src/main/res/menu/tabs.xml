@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_find"
+        android:title="@string/find_address"
+        android:icon="@drawable/ic_action_find"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_"
+        android:title="@string/panorama"
+        android:icon="@drawable/ic_action_panorama"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_extract"
+        android:title="@string/extract_archive"
+        android:icon="@drawable/ic_action_extract"
+        app:showAsAction="always"/>
+</menu>
