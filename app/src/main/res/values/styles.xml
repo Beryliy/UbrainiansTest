@@ -39,4 +39,13 @@
         <item name="android:layout_height">@dimen/scalable_height</item>
     </style>
 
+    <style name="ImageTableItem">
+        <item name="android:layout_width">@dimen/table_item_width</item>
+        <item name="android:layout_height">@dimen/table_item_height</item>
+        <item name="android:layout_marginStart">@dimen/table_item_margin_start</item>
+        <item name="android:layout_marginTop">@dimen/table_item_margin_top</item>
+        <item name="android:layout_marginEnd">@dimen/table_item_margin_end</item>
+        <item name="android:layout_marginBottom">@dimen/table_item_margin_bottom</item>
+    </style>
+
 </resources>

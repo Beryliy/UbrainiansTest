@@ -14,6 +14,12 @@
     <dimen name="input_margin_end">10dp</dimen>
 
     <dimen name="img_table_margin_top">10dp</dimen>
+    <dimen name="table_item_width">100dp</dimen>
+    <dimen name="table_item_height">100dp</dimen>
+    <dimen name="table_item_margin_start">5dp</dimen>
+    <dimen name="table_item_margin_top">5dp</dimen>
+    <dimen name="table_item_margin_end">5dp</dimen>
+    <dimen name="table_item_margin_bottom">5dp</dimen>
 
     <dimen name="find_btn_width">40dp</dimen>
     <dimen name="find_btn_height">40dp</dimen>
