@@ -1,19 +1,14 @@
 package com.flogiston.test.presentation.extract
 
 
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import androidx.databinding.DataBindingUtil
 import com.flogiston.test.R
-import com.flogiston.test.service.DownloadZipService
+import com.flogiston.test.databinding.FragmentExtractBinding
 
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -29,7 +24,15 @@ class ExtractFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_extract, container, false)
+        val binding = DataBindingUtil.inflate<FragmentExtractBinding>(
+            inflater,
+            R.layout.fragment_extract,
+            container,
+            false
+        )
+        binding.viewModel = viewModel
+        binding.extractValues = viewModel.extractValues
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

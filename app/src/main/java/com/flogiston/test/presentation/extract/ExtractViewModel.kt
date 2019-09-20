@@ -2,7 +2,6 @@ package com.flogiston.test.presentation.extract
 
 import android.util.Log
 import com.flogiston.test.domain.repository.DownloadZipRepository
-import com.flogiston.test.global.SingleLiveEvent
 import com.flogiston.test.presentation.BaseViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -17,7 +16,9 @@ class ExtractViewModel (private val repository : DownloadZipRepository, val extr
                 {
                     Log.d(TAG, "filename: $it")
                 },
-                {}
+                {
+                    Log.d(TAG, "exception: $it")
+                }
             )
         )
     }

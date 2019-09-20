@@ -19,8 +19,7 @@
             android:layout_marginTop="@dimen/input_margin_top"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/findB">
-        </EditText>
+            app:layout_constraintEnd_toStartOf="@id/findB"/>
 
         <Button
             style="@style/FindButton"
