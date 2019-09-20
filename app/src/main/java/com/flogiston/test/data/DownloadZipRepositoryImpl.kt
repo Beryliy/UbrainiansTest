@@ -45,11 +45,11 @@ class DownloadZipRepositoryImpl (private val downloadZipService : DownloadZipSer
     private fun unzip(zipFile : File) : File {
         val path = cacheDir.path
         val fileName = zipFile.name.substring(0, zipFile.name.length - 19)//position before .zip
-        val file = File.createTempFile(fileName, null, cacheDir)
         val buffer = ByteArray(4096)
         var fileInputStream : FileInputStream? = null
         var zipInputStream : ZipInputStream? = null
         var fileOutputStream : FileOutputStream? = null
+        var dir : File? = null
         try {
             fileInputStream = FileInputStream(zipFile)
             zipInputStream = ZipInputStream(BufferedInputStream(fileInputStream))
@@ -59,7 +59,7 @@ class DownloadZipRepositoryImpl (private val downloadZipService : DownloadZipSer
                 currentFileName = zipEntry.name
                 val pathToCurrent = "${cacheDir.path}$currentFileName"
                 if(zipEntry.isDirectory){
-                    val dir = File(pathToCurrent)
+                    dir = File(pathToCurrent)
                     dir.mkdirs()
                     zipEntry = zipInputStream.nextEntry
                     continue
@@ -81,7 +81,7 @@ class DownloadZipRepositoryImpl (private val downloadZipService : DownloadZipSer
             zipInputStream!!.close()
             fileOutputStream!!.close()
         }
-        return file
+        return dir!!
     }
 
     companion object {
