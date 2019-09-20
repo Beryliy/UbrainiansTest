@@ -44,11 +44,16 @@ class ExtractFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.liveFileList.observe(this, Observer {
             imgTableAdapter.fileList = it
+            imgTableAdapter.notifyDataSetChanged()
         })
         imgTableRv.apply {
             layoutManager = GridLayoutManager(context, NUM_COLUMNS)
             adapter = imgTableAdapter
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
     }
 
     companion object {
