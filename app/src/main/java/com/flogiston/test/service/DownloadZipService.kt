@@ -5,20 +5,22 @@ import android.content.Intent
 import android.content.Context
 import android.net.Uri
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.flogiston.test.data.DownloadZipRepositoryImpl
 import com.flogiston.test.domain.repository.DownloadZipRepository
 import com.flogiston.test.presentation.extract.ExtractFragment
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import okhttp3.ResponseBody
+import org.koin.android.ext.android.inject
 import java.io.*
 
 
-class DownloadZipService(val repositoty : DownloadZipRepository) : IntentService("DownloadZipService") {
-
+class DownloadZipService() : IntentService("DownloadZipService") {
+    val repositoty : DownloadZipRepository by inject<DownloadZipRepositoryImpl>()
     val disposables = CompositeDisposable()
     override fun onHandleIntent(intent: Intent?) {
-        val url = intent!!.getStringExtra("zipArchiveUrl")
+        /*val url = intent!!.getStringExtra(ExtractFragment.ZIP_ARCHIVE_URL)
         disposables.add(repositoty.download(url)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -28,7 +30,7 @@ class DownloadZipService(val repositoty : DownloadZipRepository) : IntentService
                     saveResultIntoFile(it, file)
                 },
                 {}
-            ))
+            ))*/
     }
 
     fun saveResultIntoFile(responseBody : ResponseBody, file : File){

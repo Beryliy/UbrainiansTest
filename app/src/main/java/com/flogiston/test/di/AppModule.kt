@@ -1,8 +1,16 @@
 package com.flogiston.test.di
 
 import com.flogiston.test.BuildConfig
+import com.flogiston.test.application.ApplicationProxy
+import com.flogiston.test.data.DownloadZipRepositoryImpl
+import com.flogiston.test.domain.repository.DownloadZipRepository
 import com.flogiston.test.network.DownloadZipService
+import com.flogiston.test.presentation.extract.ExtractValues
+import com.flogiston.test.presentation.extract.ExtractViewModel
 import okhttp3.OkHttpClient
+import org.koin.android.ext.koin.androidApplication
+import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.dsl.koinApplication
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -20,5 +28,9 @@ val appModule = module {
             .client(get())
             .build()
     }
-    single <DownloadZipService> { get<Retrofit>().create(DownloadZipService::class.java) }
+    single { ApplicationProxy(androidApplication()) }
+    single { get<Retrofit>().create(DownloadZipService::class.java) }
+    factory { ExtractValues() }
+    single{ DownloadZipRepositoryImpl(get(), androidApplication().cacheDir) }
+    viewModel { ExtractViewModel(get<DownloadZipRepositoryImpl>(), get()) }
 }

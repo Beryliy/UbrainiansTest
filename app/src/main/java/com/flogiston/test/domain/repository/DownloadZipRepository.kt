@@ -5,5 +5,5 @@ import io.reactivex.Single
 import okhttp3.ResponseBody
 
 interface DownloadZipRepository {
-    fun download(pathToArchive : String) : Single<ResponseBody>
+    fun download(pathToArchive : String) : Single<String>
 }
