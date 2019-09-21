@@ -55,4 +55,14 @@
         <item name="android:layout_height">@dimen/scalable_height</item>
     </style>
 
+    <style name="SuggestListItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/suggest_list_item_height</item>
+    </style>
+
+    <style name="Suggest">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
 </resources>

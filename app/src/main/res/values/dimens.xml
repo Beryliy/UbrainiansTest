@@ -25,4 +25,7 @@
     <dimen name="find_btn_height">40dp</dimen>
     <dimen name="find_btn_margin_top">10dp</dimen>
     <dimen name="find_btn_margin_end">20dp</dimen>
+
+    <!--//AutocompleteFragment//-->
+    <dimen name="suggest_list_item_height">30dp</dimen>
 </resources>
