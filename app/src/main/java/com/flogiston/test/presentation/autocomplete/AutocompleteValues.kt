@@ -2,6 +2,7 @@ package com.flogiston.test.presentation.autocomplete
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
+import androidx.databinding.library.baseAdapters.BR
 import io.reactivex.subjects.PublishSubject
 
 class AutocompleteValues : BaseObservable() {
@@ -15,6 +16,6 @@ class AutocompleteValues : BaseObservable() {
         if(!value.isNullOrBlank()){
             addressPublishSubject.onNext(value)
         }
-        //notifyPropertyChanged()
+        notifyPropertyChanged(BR.addressQuery)
     }
 }

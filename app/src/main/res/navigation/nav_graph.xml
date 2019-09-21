@@ -2,10 +2,15 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/extractFragment">
+    app:startDestination="@id/autocompleteFragment">
 
     <fragment
         android:id="@+id/extractFragment"
         android:name="com.flogiston.test.presentation.extract.ExtractFragment"
         android:label="ExtractFragment" />
+    <fragment
+        android:id="@+id/autocompleteFragment"
+        android:name="com.flogiston.test.presentation.autocomplete.AutocompleteFragment"
+        android:label="AutocompleteFragment" />
+
 </navigation>

@@ -17,13 +17,15 @@ class AutocompleteViewModel(
 
     val liveSuggests = MutableLiveData<List<String>>()
 
+    init {
+        configureAutocomplite()
+    }
+
     private fun configureAutocomplite() {
         disposables.add(autocompleteValues.addressPublishSubject
             .debounce(500, TimeUnit.MILLISECONDS)
             .distinctUntilChanged()
             .switchMap { autocompleteRepository.getSuitableAddresses(it, NUMBER_OF_SUGGESTS) }
-            .singleOrError()
-            .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {

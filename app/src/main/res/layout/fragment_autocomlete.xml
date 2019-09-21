@@ -24,7 +24,6 @@
         <Button
             style="@style/FindButton"
             android:id="@+id/saveAddressBtn"
-            android:onClick="@{() -> viewModel.autocomplite()}"
             android:background="@drawable/btn_find"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>

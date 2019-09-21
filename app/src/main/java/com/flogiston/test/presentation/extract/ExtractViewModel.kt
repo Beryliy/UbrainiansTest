@@ -11,7 +11,7 @@ import java.io.File
 class ExtractViewModel (private val repository : DownloadZipRepository, val extractValues : ExtractValues) : BaseViewModel() {
 
     val liveFileList = MutableLiveData<Array<File>>()
-    lateinit var dir : File
+    var dir : File? = null
 
     fun downloadFile() {
         disposables.add(repository.download(extractValues.zipArchiveUrl)
@@ -32,12 +32,12 @@ class ExtractViewModel (private val repository : DownloadZipRepository, val extr
 
     override fun onCleared() {
         super.onCleared()
-        if(dir.isDirectory){
-            dir.listFiles()!!.forEach {
+        if(dir !== null && dir!!.isDirectory){
+            dir!!.listFiles()!!.forEach {
                 it.delete()
             }
+            dir!!.delete()
         }
-        dir.delete()
     }
 
     companion object {

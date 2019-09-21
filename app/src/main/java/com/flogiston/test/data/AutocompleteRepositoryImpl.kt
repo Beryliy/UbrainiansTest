@@ -12,8 +12,8 @@ class AutocompleteRepositoryImpl(val autocompleteService : AutocompleteService) 
         return autocompleteService.getSuitableAddreses(
             query,
             maxRows,
-            BuildConfig.GEONAMES_USERNAME,
-            BuildConfig.LANGUAGE_CODE)
+            BuildConfig.LANGUAGE_CODE,
+            BuildConfig.GEONAMES_USERNAME)
             .map {
                 it.geonames
             }

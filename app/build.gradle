@@ -16,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "GEONAMES_URL", '"https://www.geonames.org"'
+        buildConfigField "String", "GEONAMES_URL", '"http://api.geonames.org"'
         buildConfigField "String", "GEONAMES_USERNAME", '"flogiston"'
         buildConfigField "String", "LANGUAGE_CODE", '"uk"'
     }
