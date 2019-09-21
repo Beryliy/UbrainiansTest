@@ -34,7 +34,7 @@
         <androidx.recyclerview.widget.RecyclerView
             style="@style/ImageTable"
             android:id="@+id/imgTableRv"
-            android:layout_marginTop="@dimen/img_table_margin_top"
+            android:layout_marginTop="@dimen/rv_default_margin_top"
             app:layout_constraintTop_toBottomOf="@id/archiveUrlEt"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

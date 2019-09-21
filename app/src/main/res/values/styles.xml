@@ -8,6 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--//General//-->
+    <style name="InputField">
+        <item name="android:layout_width">@dimen/scalable_width</item>
+        <item name="android:layout_height">@dimen/input_height</item>
+        <item name="android:layout_marginStart">@dimen/input_margin_start</item>
+        <item name="android:layout_marginEnd">@dimen/input_margin_end</item>
+    </style>
+
     <!--//MainActivity//-->
     <style name="NavigationFragment">
         <item name="android:layout_width">@dimen/scalable_width</item>
@@ -20,13 +28,6 @@
     </style>
 
     <!--//ExtractFragment//-->
-    <style name="InputField">
-        <item name="android:layout_width">@dimen/scalable_width</item>
-        <item name="android:layout_height">@dimen/input_height</item>
-        <item name="android:layout_marginStart">@dimen/input_margin_start</item>
-        <item name="android:layout_marginEnd">@dimen/input_margin_end</item>
-    </style>
-
     <style name="FindButton">
         <item name="android:layout_width">@dimen/find_btn_width</item>
         <item name="android:layout_height">@dimen/find_btn_height</item>
@@ -46,6 +47,12 @@
         <item name="android:layout_marginTop">@dimen/table_item_margin_top</item>
         <item name="android:layout_marginEnd">@dimen/table_item_margin_end</item>
         <item name="android:layout_marginBottom">@dimen/table_item_margin_bottom</item>
+    </style>
+
+    <!--//AutocompliteFragment//-->
+    <style name="SuggestsList">
+        <item name="android:layout_width">@dimen/scalable_width</item>
+        <item name="android:layout_height">@dimen/scalable_height</item>
     </style>
 
 </resources>
