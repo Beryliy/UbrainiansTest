@@ -1,11 +1,11 @@
 package com.flogiston.test.network
 
-import com.flogiston.test.network.autocompliteEntities.GeonamesResponce
+import com.flogiston.test.network.autocompleteEntities.GeonamesResponce
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface AutocompliteService {
+interface AutocompleteService {
     @GET("/searchJSON")
     fun getSuitableAddreses(
         @Query("q") q : String,

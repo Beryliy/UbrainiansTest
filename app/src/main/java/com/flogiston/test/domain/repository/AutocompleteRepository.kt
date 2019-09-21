@@ -1,8 +1,8 @@
 package com.flogiston.test.domain.repository
 
-import com.flogiston.test.network.autocompliteEntities.Geoname
+import com.flogiston.test.network.autocompleteEntities.Geoname
 import io.reactivex.Single
 
-interface AutocompliteRepository {
+interface AutocompleteRepository {
     fun getSuitableAddresses(query : String, maxRows : Int) : Single<List<Geoname>>
 }
