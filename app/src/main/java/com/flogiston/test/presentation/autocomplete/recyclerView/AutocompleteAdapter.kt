@@ -6,9 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.flogiston.test.R
 import kotlinx.android.synthetic.main.autocomplete_item.view.*
+import kotlinx.android.synthetic.main.fragment_autocomlete.view.*
 
 class AutocompleteAdapter : RecyclerView.Adapter<AutocompleteAdapter.AutocompleteViewHolder>() {
-
+    lateinit var suggestClicked : (address : String) -> Unit
     var suggests = listOf<String>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AutocompleteViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
@@ -26,5 +27,10 @@ class AutocompleteAdapter : RecyclerView.Adapter<AutocompleteAdapter.Autocomplet
 
     inner class AutocompleteViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         val address = view.suggest
+        init {
+            view.setOnClickListener {
+                suggestClicked(it.suggest.text.toString())
+            }
+        }
     }
 }

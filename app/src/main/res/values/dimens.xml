@@ -28,4 +28,5 @@
 
     <!--//AutocompleteFragment//-->
     <dimen name="suggest_list_item_height">30dp</dimen>
+    <dimen name="suggest_list_item_padding_start">8dp</dimen>
 </resources>

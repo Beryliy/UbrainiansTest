@@ -31,6 +31,7 @@
         <androidx.recyclerview.widget.RecyclerView
             style="@style/SuggestsList"
             android:id="@+id/suggestsRv"
+            android:visibility="@{autocompleteValues.recyclerVisible}"
             android:layout_marginTop="@dimen/rv_default_margin_top"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/addressEt"

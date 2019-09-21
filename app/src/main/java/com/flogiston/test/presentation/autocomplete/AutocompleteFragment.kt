@@ -43,6 +43,7 @@ class AutocompleteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        autocompleteAdapter.suggestClicked = viewModel::suggestClick
         suggestsRv.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = autocompleteAdapter
