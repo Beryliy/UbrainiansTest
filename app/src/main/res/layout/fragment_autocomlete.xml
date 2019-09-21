@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable name="viewModel" type="com.flogiston.test.presentation.autocomplete.AutocompleteViewModel" />
+        <variable name="autocompleteValues" type="com.flogiston.test.presentation.autocomplete.AutocompleteValues" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".presentation.autocomplete.AutocompleteFragment">
+
+        <EditText
+            style="@style/InputField"
+            android:id="@+id/addressEt"
+            android:text="@={autocompleteValues.addressQuery}"
+            android:layout_marginTop="@dimen/input_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/saveAddressBtn" />
+
+        <Button
+            style="@style/FindButton"
+            android:id="@+id/saveAddressBtn"
+            android:onClick="@{() -> viewModel.autocomplite()}"
+            android:background="@drawable/btn_find"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            style="@style/SuggestsList"
+            android:id="@+id/suggestsRv"
+            android:layout_marginTop="@dimen/rv_default_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addressEt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -2,9 +2,13 @@ package com.flogiston.test.di
 
 import com.flogiston.test.BuildConfig
 import com.flogiston.test.application.ApplicationProxy
+import com.flogiston.test.data.AutocompleteRepositoryImpl
 import com.flogiston.test.data.DownloadZipRepositoryImpl
 import com.flogiston.test.domain.repository.DownloadZipRepository
+import com.flogiston.test.network.AutocompleteService
 import com.flogiston.test.network.DownloadZipService
+import com.flogiston.test.presentation.autocomplete.AutocompleteValues
+import com.flogiston.test.presentation.autocomplete.AutocompleteViewModel
 import com.flogiston.test.presentation.extract.ExtractValues
 import com.flogiston.test.presentation.extract.ExtractViewModel
 import okhttp3.OkHttpClient
@@ -33,4 +37,8 @@ val appModule = module {
     factory { ExtractValues() }
     single{ DownloadZipRepositoryImpl(get(), androidApplication().cacheDir) }
     viewModel { ExtractViewModel(get<DownloadZipRepositoryImpl>(), get()) }
+    single { get<Retrofit>().create(AutocompleteService::class.java) }
+    single { AutocompleteRepositoryImpl(get()) }
+    factory { AutocompleteValues() }
+    viewModel { AutocompleteViewModel(get<AutocompleteRepositoryImpl>(), get()) }
 }
