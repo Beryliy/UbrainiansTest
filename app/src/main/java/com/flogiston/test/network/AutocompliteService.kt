@@ -5,7 +5,7 @@ import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface GeonamesService {
+interface AutocompliteService {
     @GET("/searchJSON")
     fun getSuitableAddreses(
         @Query("q") q : String,
