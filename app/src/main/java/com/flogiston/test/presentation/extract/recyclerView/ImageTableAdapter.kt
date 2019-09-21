@@ -25,6 +25,5 @@ class ImageTableAdapter : RecyclerView.Adapter<ImageTableAdapter.ImageViewHolder
 
     inner class ImageViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         val itemImage = view.itemImage
-
     }
 }

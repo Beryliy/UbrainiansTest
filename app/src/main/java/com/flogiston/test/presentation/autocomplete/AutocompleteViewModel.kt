@@ -7,6 +7,7 @@ import com.flogiston.test.network.autocompleteEntities.Geoname
 import com.flogiston.test.presentation.BaseViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import okhttp3.internal.toImmutableList
 import java.util.concurrent.TimeUnit
 
 class AutocompleteViewModel(
@@ -14,7 +15,7 @@ class AutocompleteViewModel(
     val autocompleteValues: AutocompleteValues
 ) : BaseViewModel() {
 
-    val liveSuggests = MutableLiveData<List<Geoname>>()
+    val liveSuggests = MutableLiveData<List<String>>()
 
     private fun configureAutocomplite() {
         disposables.add(autocompleteValues.addressPublishSubject
@@ -26,7 +27,11 @@ class AutocompleteViewModel(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {
-                    liveSuggests.value = it
+                    val addresses = mutableListOf<String>()
+                    it.forEach {
+                        addresses.add("${it.countryName} ${it.name}")
+                    }
+                    liveSuggests.value = addresses.toImmutableList()
                 },
                 {
                     Log.d(TAG, "exception: ${it.message}")
