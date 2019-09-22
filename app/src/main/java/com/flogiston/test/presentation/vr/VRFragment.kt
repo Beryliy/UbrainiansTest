@@ -22,6 +22,7 @@ class VRFragment : Fragment() {
     private var gyroscope : Sensor? = null
     private var accelerometer : Sensor? = null
     private var magnetometer : Sensor? = null
+    private var gyroscopeQuaternion = FloatArray(4)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -77,7 +78,6 @@ class VRFragment : Fragment() {
             },
                 magnetometer,
                 SensorManager.SENSOR_DELAY_NORMAL)
-        }
         }
     }
 }
