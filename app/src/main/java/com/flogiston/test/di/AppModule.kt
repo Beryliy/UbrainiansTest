@@ -11,6 +11,7 @@ import com.flogiston.test.presentation.autocomplete.AutocompleteValues
 import com.flogiston.test.presentation.autocomplete.AutocompleteViewModel
 import com.flogiston.test.presentation.extract.ExtractValues
 import com.flogiston.test.presentation.extract.ExtractViewModel
+import com.flogiston.test.presentation.vr.VRViewModel
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -41,4 +42,5 @@ val appModule = module {
     single { AutocompleteRepositoryImpl(get()) }
     factory { AutocompleteValues() }
     viewModel { AutocompleteViewModel(get<AutocompleteRepositoryImpl>(), get()) }
+    viewModel { VRViewModel() }
 }

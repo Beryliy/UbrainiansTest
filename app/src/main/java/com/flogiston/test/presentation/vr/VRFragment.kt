@@ -13,11 +13,13 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.flogiston.test.R
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * A simple [Fragment] subclass.
  */
 class VRFragment : Fragment() {
+    private val viewModel : VRViewModel by viewModel()
     private lateinit var sensorManager : SensorManager
     private var gyroscope : Sensor? = null
     private var accelerometer : Sensor? = null
@@ -41,11 +43,10 @@ class VRFragment : Fragment() {
         gyroscope?.also { gyroscope ->
             sensorManager.registerListener(object : SensorEventListener {
                 override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
-
                 }
 
                 override fun onSensorChanged(event: SensorEvent?) {
-
+                    viewModel.gyroscopeDataChanged(event!!.values)
                 }
             },
                 gyroscope,
