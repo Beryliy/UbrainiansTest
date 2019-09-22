@@ -7,7 +7,7 @@ import kotlin.math.atan2
 
 class VRViewModel : ViewModel() {
     private var lastGyroDataChange : Long? = null
-    private var orientationQuaternion = Quaternion(0.0f, 0.0f, 0.0f, 1.0f)
+    private var orientationQuaternion = Quaternion(1.0f, 1.0f, 1.0f, 1.0f)
     private var gyroscopeWorked = false
 
 

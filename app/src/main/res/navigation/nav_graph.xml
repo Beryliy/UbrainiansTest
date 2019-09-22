@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/autocompleteFragment">
 
@@ -8,6 +9,13 @@
         android:id="@+id/extractFragment"
         android:name="com.flogiston.test.presentation.extract.ExtractFragment"
         android:label="ExtractFragment" />
+
+    <fragment
+        android:id="@+id/VRFragment"
+        android:name="com.flogiston.test.presentation.vr.VRFragment"
+        android:label="fragment_vr"
+        tools:layout="@layout/fragment_vr" />
+
     <fragment
         android:id="@+id/autocompleteFragment"
         android:name="com.flogiston.test.presentation.autocomplete.AutocompleteFragment"

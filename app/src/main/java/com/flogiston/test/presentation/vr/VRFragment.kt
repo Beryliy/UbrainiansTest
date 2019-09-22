@@ -60,7 +60,7 @@ class VRFragment : Fragment() {
                 }
 
                 override fun onSensorChanged(event: SensorEvent?) {
-
+                    viewModel.accelerometerDataChanged(event!!.values)
                 }
             },
                 accelerometer,
@@ -74,7 +74,7 @@ class VRFragment : Fragment() {
                 }
 
                 override fun onSensorChanged(event: SensorEvent?) {
-
+                    viewModel.magnetometerDataChanged(event!!.values)
                 }
             },
                 magnetometer,

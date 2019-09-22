@@ -7,7 +7,7 @@
         android:icon="@drawable/ic_action_find"
         app:showAsAction="always"/>
 
-    <item android:id="@+id/action_"
+    <item android:id="@+id/VRFragment"
         android:title="@string/panorama"
         android:icon="@drawable/ic_action_panorama"
         app:showAsAction="always"/>
