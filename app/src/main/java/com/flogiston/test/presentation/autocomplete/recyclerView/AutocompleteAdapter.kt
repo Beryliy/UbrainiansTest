@@ -3,6 +3,7 @@ package com.flogiston.test.presentation.autocomplete.recyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.flogiston.test.R
 import kotlinx.android.synthetic.main.autocomplete_item.view.*

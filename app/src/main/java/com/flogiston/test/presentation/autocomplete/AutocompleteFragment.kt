@@ -8,12 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 import com.flogiston.test.R
 import com.flogiston.test.databinding.FragmentAutocomleteBinding
+import com.flogiston.test.presentation.autocomplete.recyclerView.AddressDiffUtil
 import com.flogiston.test.presentation.autocomplete.recyclerView.AutocompleteAdapter
 import kotlinx.android.synthetic.main.fragment_autocomlete.*
 
@@ -49,8 +51,14 @@ class AutocompleteFragment : Fragment() {
             adapter = autocompleteAdapter
         }
         viewModel.liveSuggests.observe(this, Observer {
-            autocompleteAdapter.suggests = it
-            autocompleteAdapter.notifyDataSetChanged()
+            updateList(it)
         })
+    }
+
+    fun updateList(newList : List<String>) {
+        val diffUtil = AddressDiffUtil(autocompleteAdapter.suggests, newList)
+        val diffResult = DiffUtil.calculateDiff(diffUtil)
+        autocompleteAdapter.suggests = newList
+        diffResult.dispatchUpdatesTo(autocompleteAdapter)
     }
 }
